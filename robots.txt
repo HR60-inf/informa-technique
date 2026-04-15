@@ -1,0 +1,8 @@
+# Robots.txt — Informa-Technique R
+# Autorise tous les moteurs de recherche à indexer le site
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://HR60-inf.github.io/informa-technique/sitemap.xml
