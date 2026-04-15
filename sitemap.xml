@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!-- Page principale -->
   <url>
@@ -7,9 +8,13 @@
     <lastmod>2026-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://hr60-inf.github.io/informa-technique/assets/images/profile.jpg</image:loc>
+      <image:title>Informa-Technique R — Tutoriels Informatique et Sécurité Numérique</image:title>
+    </image:image>
   </url>
 
-  <!-- Sections de la page -->
+  <!-- Section Vidéos / Tutoriels -->
   <url>
     <loc>https://hr60-inf.github.io/informa-technique/#videos</loc>
     <lastmod>2026-04-15</lastmod>
@@ -17,6 +22,7 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Section Catégories -->
   <url>
     <loc>https://hr60-inf.github.io/informa-technique/#categories</loc>
     <lastmod>2026-04-15</lastmod>
@@ -24,6 +30,7 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Section Réseaux -->
   <url>
     <loc>https://hr60-inf.github.io/informa-technique/#reseaux</loc>
     <lastmod>2026-04-15</lastmod>
@@ -31,6 +38,7 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Section À propos -->
   <url>
     <loc>https://hr60-inf.github.io/informa-technique/#apropos</loc>
     <lastmod>2026-04-15</lastmod>
@@ -38,11 +46,20 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Section Contact -->
   <url>
     <loc>https://hr60-inf.github.io/informa-technique/#contact</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+
+  <!-- Section Services -->
+  <url>
+    <loc>https://hr60-inf.github.io/informa-technique/#services</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
 </urlset>
