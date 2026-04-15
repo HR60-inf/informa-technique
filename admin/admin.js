@@ -20,7 +20,7 @@
 'use strict';
 
 // ── CONFIGURATION ──────────────────────────────────────
-const ADMIN_PASSWORD = 'admin2025'; // ← Changez ce mot de passe !
+const ADMIN_PASSWORD = 'Chouani2018@!'; // ← Changez ce mot de passe !
 const API_BASE       = '../php/videos.php';
 const ADMIN_TOKEN    = 'informa2025secret'; // Doit correspondre à php/videos.php
 const SESSION_KEY    = 'itr_admin_logged';
