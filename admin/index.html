@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Informa-Technique R</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     PAGE DE CONNEXION
+══════════════════════════════════ -->
+<div class="login-page" id="loginPage">
+  <div class="login-box">
+    <div class="login-logo">⚙️</div>
+    <h1 class="login-title">Informa-Technique R</h1>
+    <p class="login-subtitle">Panneau d'administration</p>
+
+    <form class="login-form" onsubmit="login(event)">
+      <div class="login-field">
+        <label for="adminPassword">Mot de passe</label>
+        <input
+          type="password"
+          id="adminPassword"
+          placeholder="••••••••"
+          autocomplete="current-password"
+          required
+        >
+      </div>
+      <p class="login-error" id="loginError"></p>
+      <button type="submit" class="login-btn">Se connecter</button>
+    </form>
+
+    <a href="../index.html" class="back-site">← Retour au site</a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     DASHBOARD ADMIN
+══════════════════════════════════ -->
+<div class="admin-dashboard" id="adminDashboard" style="display:none">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="sidebar-title">📡 ITR Admin</div>
+      <div class="sidebar-sub">Informa-Technique R</div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-link active" onclick="showTab('videos', this)">
+        🎬 Vidéos
+        <span class="badge" id="msgBadge" style="display:none">0</span>
+      </a>
+      <a class="sidebar-link" onclick="showTab('add', this)">
+        ➕ Ajouter
+      </a>
+      <a class="sidebar-link" onclick="showTab('messages', this)">
+        ✉️ Messages
+      </a>
+      <a class="sidebar-link" onclick="showTab('stats', this)">
+        📊 Statistiques
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a class="sidebar-link logout-btn" onclick="logout()">🚪 Déconnexion</a>
+      <a href="../index.html" class="back-site" style="text-align:center;display:block;margin-top:8px">← Voir le site</a>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="admin-main">
+
+    <!-- Toast notification -->
+    <div class="admin-toast" id="adminToast"></div>
+
+    <!-- ── TAB : LISTE DES VIDÉOS ── -->
+    <div class="admin-tab active" id="tab-videos">
+      <div class="tab-header">
+        <h2 class="tab-title">
+          🎬 Gestion des vidéos
+          <span id="adminVideoCount" style="background:var(--accent);color:#000;padding:2px 10px;border-radius:20px;font-size:13px;font-weight:700;margin-left:8px">0</span>
+        </h2>
+        <div class="tab-actions">
+          <button class="btn-add" onclick="showTab('add', document.querySelector('.sidebar-link[onclick*=\'add\']'))">
+            + Ajouter une vidéo
+          </button>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap">
+        <input
+          type="text"
+          id="adminSearch"
+          class="admin-search"
+          placeholder="🔍 Rechercher une vidéo..."
+          oninput="filterVideos()"
+          style="flex:1;min-width:200px"
+        >
+        <select id="adminCatFilter" class="admin-select" onchange="filterVideos()" style="min-width:180px">
+          <option value="">Toutes les catégories</option>
+          <option value="informatique">💻 Informatique</option>
+          <option value="programmation">🧑‍💻 Programmation</option>
+          <option value="reseaux">🌐 Réseaux</option>
+          <option value="securite">🔒 Sécurité</option>
+          <option value="ia">🤖 Intelligence Artificielle</option>
+          <option value="autres">📦 Autres</option>
+        </select>
+      </div>
+
+      <div class="admin-table-wrapper">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Miniature</th>
+              <th>Titre</th>
+              <th>Catégorie</th>
+              <th>Plateforme</th>
+              <th>Vues</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="adminTableBody">
+            <tr>
+              <td colspan="7" class="empty-table">Chargement des vidéos...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── TAB : AJOUTER / MODIFIER ── -->
+    <div class="admin-tab" id="tab-add">
+      <div class="tab-header">
+        <h2 class="tab-title" id="formTitle">➕ Ajouter une vidéo</h2>
+      </div>
+
+      <form class="video-form" id="videoForm" onsubmit="saveVideo(event)">
+        <input type="hidden" id="editId">
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Titre *</label>
+            <input type="text" id="vTitle" class="admin-input" placeholder="Titre de la vidéo" required>
+          </div>
+
+          <div class="form-group">
+            <label>Emoji</label>
+            <input type="text" id="vEmoji" class="admin-input" placeholder="🎬" maxlength="4">
+          </div>
+
+          <div class="form-group full-width">
+            <label>Description</label>
+            <textarea id="vDesc" class="admin-textarea" placeholder="Description de la vidéo..." rows="3"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Catégorie *</label>
+            <select id="vCategory" class="admin-select" required>
+              <option value="">-- Choisir --</option>
+              <option value="informatique">💻 Informatique</option>
+              <option value="programmation">🧑‍💻 Programmation</option>
+              <option value="reseaux">🌐 Réseaux</option>
+              <option value="securite">🔒 Sécurité</option>
+              <option value="ia">🤖 Intelligence Artificielle</option>
+              <option value="autres">📦 Autres</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Plateforme *</label>
+            <select id="vPlatform" class="admin-select" required>
+              <option value="">-- Choisir --</option>
+              <option value="youtube">▶️ YouTube</option>
+              <option value="tiktok">🎵 TikTok</option>
+              <option value="facebook">📘 Facebook</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>URL YouTube</label>
+            <input type="url" id="vYoutube" class="admin-input" placeholder="https://youtube.com/watch?v=...">
+          </div>
+
+          <div class="form-group">
+            <label>URL TikTok</label>
+            <input type="url" id="vTiktok" class="admin-input" placeholder="https://tiktok.com/@...">
+          </div>
+
+          <div class="form-group">
+            <label>URL Facebook</label>
+            <input type="url" id="vFacebook" class="admin-input" placeholder="https://facebook.com/...">
+          </div>
+
+          <div class="form-group">
+            <label>URL Miniature</label>
+            <input type="url" id="vThumbnail" class="admin-input" placeholder="https://img.youtube.com/vi/ID/hqdefault.jpg">
+          </div>
+
+          <div class="form-group">
+            <label>Nombre de vues</label>
+            <input type="number" id="vViews" class="admin-input" placeholder="0" min="0">
+          </div>
+
+          <div class="form-group">
+            <label>Date de publication</label>
+            <input type="date" id="vDate" class="admin-input">
+          </div>
+
+          <div class="form-group full-width">
+            <label>Tags (séparés par des virgules)</label>
+            <input type="text" id="vTags" class="admin-input" placeholder="python, débutant, tutoriel">
+          </div>
+        </div>
+
+        <p class="form-feedback" id="formFeedback"></p>
+
+        <div class="form-actions">
+          <button type="button" class="btn-cancel" onclick="resetForm()">🔄 Réinitialiser</button>
+          <button type="submit" class="btn-save" id="saveBtn">💾 Enregistrer</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- ── TAB : MESSAGES ── -->
+    <div class="admin-tab" id="tab-messages">
+      <div class="tab-header">
+        <h2 class="tab-title">✉️ Messages reçus</h2>
+      </div>
+      <div id="messagesList" class="messages-list">
+        <p class="empty-state">Chargement des messages...</p>
+      </div>
+    </div>
+
+    <!-- ── TAB : STATISTIQUES ── -->
+    <div class="admin-tab" id="tab-stats">
+      <div class="tab-header">
+        <h2 class="tab-title">📊 Statistiques</h2>
+      </div>
+      <div id="statsGrid" class="stats-grid"></div>
+
+      <div class="stats-section">
+        <h3>Répartition par catégorie</h3>
+        <div id="categoryProgress" class="progress-list"></div>
+      </div>
+
+      <div class="stats-section">
+        <h3>Répartition par plateforme</h3>
+        <div id="platformProgress" class="progress-list"></div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>
