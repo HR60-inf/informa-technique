@@ -1,0 +1,170 @@
+/* ══════════════════════════════════════════════════════════════
+   INFORMA-TECHNIQUE R — animations.css
+   Toutes les animations et effets visuels
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── FADE-UP (déclenchée par IntersectionObserver) ── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Délais en cascade pour les grilles */
+.fade-up:nth-child(1) { transition-delay: 0s; }
+.fade-up:nth-child(2) { transition-delay: 0.1s; }
+.fade-up:nth-child(3) { transition-delay: 0.2s; }
+.fade-up:nth-child(4) { transition-delay: 0.3s; }
+.fade-up:nth-child(5) { transition-delay: 0.4s; }
+.fade-up:nth-child(6) { transition-delay: 0.5s; }
+
+/* ── PULSE (point live badge) ── */
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.8); }
+}
+
+.hero-badge::before {
+  animation: pulse 2s infinite;
+}
+
+/* ── GLOW PULSE (boutons / cartes actives) ── */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 10px rgba(0, 200, 255, 0.15); }
+  50%       { box-shadow: 0 0 30px rgba(0, 200, 255, 0.35); }
+}
+
+.cat-card.active {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* ── MODAL ENTRÉE ── */
+@keyframes modalIn {
+  from { transform: scale(0.92); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+/* ── FLOAT (carte "À propos") ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+.about-img-frame {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ── SPINNER (chargement formulaire) ── */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px; height: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-top-color: #000;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+/* ── SLIDE IN (menu mobile) ── */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.mobile-menu.open {
+  animation: slideDown 0.25s ease;
+}
+
+/* ── GRADIENT SHIFT (hero titre) ── */
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-title span {
+  background-size: 200% 200%;
+  animation: gradientShift 5s ease infinite;
+}
+
+/* ── CARD APPARITION (grille vidéos) ── */
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.video-card {
+  animation: cardIn 0.4s ease both;
+}
+
+/* Décalage par position dans la grille */
+.video-card:nth-child(1) { animation-delay: 0.05s; }
+.video-card:nth-child(2) { animation-delay: 0.10s; }
+.video-card:nth-child(3) { animation-delay: 0.15s; }
+.video-card:nth-child(4) { animation-delay: 0.20s; }
+.video-card:nth-child(5) { animation-delay: 0.25s; }
+.video-card:nth-child(6) { animation-delay: 0.30s; }
+
+/* ── NAV SCROLL ── */
+@keyframes navSlideIn {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(0); }
+}
+
+nav {
+  animation: navSlideIn 0.5s ease;
+}
+
+/* ── TOAST ── */
+.toast.show {
+  animation: toastIn 0.3s ease;
+}
+
+@keyframes toastIn {
+  from { transform: translateX(100px); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+
+/* ── SCAN LINE (effet tech sur avatar) ── */
+.about-img-inner::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 200, 255, 0.6), transparent);
+  animation: scanLine 3s linear infinite;
+  opacity: 0.5;
+}
+
+.about-img-inner {
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes scanLine {
+  0%   { top: 0%; }
+  100% { top: 100%; }
+}
+
+/* ── TEXTE LOADING ── */
+@keyframes shimmer {
+  0%   { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--bg3) 25%, var(--bg2) 50%, var(--bg3) 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}

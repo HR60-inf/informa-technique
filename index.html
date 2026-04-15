@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tutoriels de sécurité mobile & informatique, astuces numériques — Informa-Technique R">
+  <title>Informa-Technique R — Sécurité & Astuces Numériques</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <!-- ═══ GOOGLE ADSENSE ═══
+       Remplace "ca-pub-XXXXXXXXXXXXXXXXX" par ton vrai ID publisher AdSense
+       Crée un compte sur https://adsense.google.com
+  ══════════════════════════ -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════ -->
+<nav id="mainNav">
+  <a href="#accueil" class="nav-logo">
+    <div class="nav-logo-icon">🛡️</div>
+    <div>
+      <div class="nav-logo-text">Informa-Technique R</div>
+      <div class="nav-logo-sub">Sécurité & Astuces Numériques</div>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#accueil" class="active">Accueil</a></li>
+    <li><a href="#categories">Catégories</a></li>
+    <li><a href="#videos">Vidéos</a></li>
+    <li><a href="#reseaux">Réseaux</a></li>
+    <li><a href="#apropos">À propos</a></li>
+    <li><a href="#services" class="nav-services">Services</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+    <li><a href="admin/index.html" class="nav-admin">⚙️ Admin</a></li>
+  </ul>
+  <div class="hamburger" id="hamburgerBtn" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- Menu mobile -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#accueil" onclick="closeMenu()">🏠 Accueil</a>
+  <a href="#categories" onclick="closeMenu()">📂 Catégories</a>
+  <a href="#videos" onclick="closeMenu()">▶️ Vidéos</a>
+  <a href="#reseaux" onclick="closeMenu()">📱 Réseaux sociaux</a>
+  <a href="#apropos" onclick="closeMenu()">👤 À propos</a>
+  <a href="#services" onclick="closeMenu()">📋 Services</a>
+  <a href="#contact" onclick="closeMenu()">✉️ Contact</a>
+  <a href="admin/index.html">⚙️ Admin</a>
+</div>
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section id="accueil">
+  <div class="hero-wrap">
+
+    <!-- ── Côté gauche : texte centré ── -->
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span> Nouveau tutoriel chaque semaine
+      </div>
+      <h1 class="hero-title">
+        Maîtrisez votre<br>
+        <span>sécurité numérique</span>
+      </h1>
+      <p class="hero-desc">
+        Tutoriels de sécurité mobile &amp; informatique, astuces numériques et guides pratiques tout ce qu'il faut pour naviguer en sécurité sur internet.
+      </p>
+      <div class="hero-buttons">
+        <a href="#videos" class="btn-primary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Voir les tutoriels
+        </a>
+        <a href="#reseaux" class="btn-secondary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          Nos réseaux
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">18<span>K</span></div>
+          <div class="hero-stat-label">Facebook</div>
+        </div>
+        <div class="hero-stat-sep"></div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">13.5<span>K</span></div>
+          <div class="hero-stat-label">TikTok</div>
+        </div>
+        <div class="hero-stat-sep"></div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">1.74<span>K</span></div>
+          <div class="hero-stat-label">YouTube</div>
+        </div>
+        <div class="hero-stat-sep"></div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">31<span>+</span></div>
+          <div class="hero-stat-label">Tutoriels</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Côté droit : visuel réseaux sociaux ── -->
+    <div class="hero-visual">
+
+      <!-- En-tête panneau avec photo de profil -->
+      <div class="hv-header">
+        <img src="assets/images/profile.jpg" alt="Informa-Technique R" class="hv-profile-img"
+             onerror="this.style.display='none';document.querySelector('.hv-profile-fallback').style.display='flex'">
+        <div class="hv-profile-fallback" style="display:none">IR</div>
+        <div class="hv-header-info">
+          <div class="hv-channel-name">Informa-Technique R</div>
+          <div class="hv-channel-sub">Science &amp; Technologie</div>
+        </div>
+        <div class="hv-verified">✓</div>
+      </div>
+
+      <!-- Titre du panneau -->
+      <div class="hv-title">
+        <span class="hv-dot yt-dot"></span>
+        <span class="hv-dot fb-dot"></span>
+        <span class="hv-dot tt-dot"></span>
+        <span style="margin-left:6px;font-size:12px;color:var(--muted)">Retrouvez-nous sur</span>
+      </div>
+
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/@Informa-Tech188" target="_blank" rel="noopener" class="hv-card yt-card">
+        <div class="hv-card-left">
+          <div class="hv-avatar yt-avatar">
+            <!-- Logo YouTube officiel -->
+            <svg viewBox="0 0 90 63" fill="white" width="26" height="18"><path d="M88.1 9.8C87 5.8 84 2.7 80.1 1.6 73.1 0 45 0 45 0S16.9 0 9.9 1.6C6 2.7 3 5.8 1.9 9.8 0 17 0 31.5 0 31.5s0 14.5 1.9 21.7C3 57.2 6 60.3 9.9 61.4 16.9 63 45 63 45 63s28.1 0 35.1-1.6c3.9-1.1 6.9-4.2 8-8.2C90 46 90 31.5 90 31.5S90 17 88.1 9.8zM36 45V18l23.4 13.5L36 45z"/></svg>
+          </div>
+          <div>
+            <div class="hv-name">Informa-Technique R</div>
+            <div class="hv-handle">@Informa-Tech188</div>
+          </div>
+        </div>
+        <div class="hv-card-right">
+          <div class="hv-stat-num">1,74K</div>
+          <div class="hv-stat-label">abonnés</div>
+        </div>
+      </a>
+
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/InformaTech188" target="_blank" rel="noopener" class="hv-card fb-card">
+        <div class="hv-card-left">
+          <div class="hv-avatar fb-avatar">
+            <!-- Logo Facebook officiel "f" -->
+            <svg viewBox="0 0 24 24" fill="white" width="22" height="22"><path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"/></svg>
+          </div>
+          <div>
+            <div class="hv-name">Informa-Technique R</div>
+            <div class="hv-handle">InformaTech188</div>
+          </div>
+        </div>
+        <div class="hv-card-right">
+          <div class="hv-stat-num">18K</div>
+          <div class="hv-stat-label">j'aime</div>
+        </div>
+      </a>
+
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com/@informa_tech188" target="_blank" rel="noopener" class="hv-card tt-card">
+        <div class="hv-card-left">
+          <div class="hv-avatar tt-avatar">
+            <!-- Logo TikTok officiel -->
+            <svg viewBox="0 0 2859 3333" fill="white" width="20" height="20"><path d="M2081 0c55 473 319 755 778 785v532c-266 26-499-61-770-225v995c0 1264-1378 1659-1933 753-356-583-138-1606 1004-1647v561c-87 14-180 36-265 65-254 86-398 247-358 531 77 544 1075 705 992-358V1h552z"/></svg>
+          </div>
+          <div>
+            <div class="hv-name">Informa-Technique R</div>
+            <div class="hv-handle">@informa_tech188</div>
+          </div>
+        </div>
+        <div class="hv-card-right">
+          <div class="hv-stat-num">13.5K</div>
+          <div class="hv-stat-label">followers</div>
+        </div>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/informa_technique_r/" target="_blank" rel="noopener" class="hv-card ig-card">
+        <div class="hv-card-left">
+          <div class="hv-avatar ig-avatar">
+            <!-- Logo Instagram officiel caméra -->
+            <svg viewBox="0 0 24 24" fill="white" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.062 1.366-.334 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.265.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-1.366-.062-2.633-.334-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.584 2.163 15.205 2.163 12c0-3.204.012-3.584.07-4.849.062-1.366.334-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zM12 0C8.741 0 8.332.014 7.052.072 5.197.157 3.355.673 2.014 2.014.673 3.355.157 5.197.072 7.052.014 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.085 1.855.601 3.697 1.942 5.038 1.341 1.341 3.183 1.857 5.038 1.942C8.332 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 1.855-.085 3.697-.601 5.038-1.942 1.341-1.341 1.857-3.183 1.942-5.038C23.986 15.668 24 15.259 24 12c0-3.259-.014-3.668-.072-4.948-.085-1.855-.601-3.697-1.942-5.038C20.645.673 18.803.157 16.948.072 15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </div>
+          <div>
+            <div class="hv-name">Informa-Technique R</div>
+            <div class="hv-handle">@informa_technique_r</div>
+          </div>
+        </div>
+        <div class="hv-card-right">
+          <div class="hv-stat-num">239</div>
+          <div class="hv-stat-label">followers</div>
+        </div>
+      </a>
+
+      <!-- Badge flottant -->
+      <div class="hv-badge">
+        🛡️ <strong>Science &amp; Technologie</strong>
+      </div>
+
+    </div><!-- fin hero-visual -->
+  </div><!-- fin hero-wrap -->
+</section>
+
+<!-- ══════════════════════════════════════════
+     CATÉGORIES
+══════════════════════════════════════════ -->
+<section id="categories">
+  <div class="section-header fade-up">
+    <div class="section-tag">Parcourir</div>
+    <h2 class="section-title">Toutes les <span>catégories</span></h2>
+    <p class="section-desc">Retrouvez facilement les vidéos qui vous intéressent par thème</p>
+  </div>
+  <div class="categories-grid">
+    <a class="cat-card active" data-filter="all" onclick="filterVideos('all', this)">
+      <div class="cat-icon">🎯</div>
+      <div class="cat-name">Tout voir</div>
+      <div class="cat-count" id="count-all">0 vidéos</div>
+    </a>
+    <a class="cat-card" data-filter="securite" onclick="filterVideos('securite', this)">
+      <div class="cat-icon">🔒</div>
+      <div class="cat-name">Sécurité</div>
+      <div class="cat-count" id="count-securite">0 vidéos</div>
+    </a>
+    <a class="cat-card" data-filter="navigateur" onclick="filterVideos('navigateur', this)">
+      <div class="cat-icon">🌐</div>
+      <div class="cat-name">Navigateur</div>
+      <div class="cat-count" id="count-navigateur">0 vidéos</div>
+    </a>
+    <a class="cat-card" data-filter="crypto" onclick="filterVideos('crypto', this)">
+      <div class="cat-icon">💰</div>
+      <div class="cat-name">Crypto &amp; Finance</div>
+      <div class="cat-count" id="count-crypto">0 vidéos</div>
+    </a>
+    <a class="cat-card" data-filter="demarches" onclick="filterVideos('demarches', this)">
+      <div class="cat-icon">📋</div>
+      <div class="cat-name">Démarches</div>
+      <div class="cat-count" id="count-demarches">0 vidéos</div>
+    </a>
+    <a class="cat-card" data-filter="astuces" onclick="filterVideos('astuces', this)">
+      <div class="cat-icon">💡</div>
+      <div class="cat-name">Astuces &amp; Tutos</div>
+      <div class="cat-count" id="count-astuces">0 vidéos</div>
+    </a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     VIDÉOS
+══════════════════════════════════════════ -->
+<section id="videos">
+  <div class="section-header fade-up">
+    <div class="section-tag">Contenu</div>
+    <h2 class="section-title">Nos <span>tutoriels</span></h2>
+    <p class="section-desc">Tous nos tutoriels disponibles sur les différentes plateformes</p>
+  </div>
+
+  <!-- Barre de recherche -->
+  <div class="search-bar">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+    <input type="text" id="searchInput" placeholder="Rechercher un tutoriel..." oninput="searchVideos()">
+    <button id="clearSearch" onclick="clearSearch()" style="display:none" title="Effacer">✕</button>
+  </div>
+
+  <!-- Filtres plateformes -->
+  <div class="videos-controls" id="platformFilters">
+    <button class="filter-btn active" onclick="filterPlatform('all', this)">Toutes plateformes</button>
+    <button class="filter-btn" onclick="filterPlatform('youtube', this)">📺 YouTube</button>
+    <button class="filter-btn" onclick="filterPlatform('facebook', this)">👤 Facebook</button>
+    <button class="filter-btn" onclick="filterPlatform('tiktok', this)">🎵 TikTok</button>
+  </div>
+
+  <!-- Grille vidéos -->
+  <div class="videos-grid" id="videosGrid"></div>
+
+  <!-- Aucun résultat -->
+  <div class="no-results" id="noResults" style="display:none">
+    <div style="font-size:40px;margin-bottom:16px">🔍</div>
+    <p>Aucune vidéo trouvée pour cette recherche.</p>
+  </div>
+
+  <!-- Charger plus -->
+  <button class="load-more-btn" id="loadMoreBtn" onclick="loadMore()">Charger plus de vidéos</button>
+</section>
+
+<!-- ═══ PUBLICITÉ ADSENSE (bandeau horizontal) ═══ -->
+<div class="adsense-banner">
+  <!-- Décommente après avoir activé AdSense :
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX"
+       data-ad-slot="XXXXXXXXXX"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  -->
+  <div class="adsense-placeholder">
+    <span>Espace publicitaire — <a href="https://adsense.google.com" target="_blank">Activer AdSense</a></span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     RÉSEAUX SOCIAUX
+══════════════════════════════════════════ -->
+<section id="reseaux">
+  <div class="section-header fade-up">
+    <div class="section-tag">Communauté</div>
+    <h2 class="section-title">Suivez-nous sur les <span>réseaux</span></h2>
+    <p class="section-desc">Rejoignez notre communauté et ne ratez aucun tutoriel</p>
+  </div>
+  <div class="socials-grid">
+
+    <!-- YouTube -->
+    <a href="https://www.youtube.com/@Informa-Tech188" target="_blank" rel="noopener" class="social-card yt">
+      <div class="social-header">
+        <div class="social-icon yt">
+          <svg viewBox="0 0 90 63" fill="white" width="28" height="20"><path d="M88.1 9.8C87 5.8 84 2.7 80.1 1.6 73.1 0 45 0 45 0S16.9 0 9.9 1.6C6 2.7 3 5.8 1.9 9.8 0 17 0 31.5 0 31.5s0 14.5 1.9 21.7C3 57.2 6 60.3 9.9 61.4 16.9 63 45 63 45 63s28.1 0 35.1-1.6c3.9-1.1 6.9-4.2 8-8.2C90 46 90 31.5 90 31.5S90 17 88.1 9.8zM36 45V18l23.4 13.5L36 45z"/></svg>
+        </div>
+        <div>
+          <div class="social-name">YouTube</div>
+          <div class="social-handle">@Informa-Tech188</div>
+        </div>
+      </div>
+      <div class="social-stats">
+        <div>
+          <div class="social-stat-num">1,74K</div>
+          <div class="social-stat-label">Abonnés</div>
+        </div>
+        <div>
+          <div class="social-stat-num">31</div>
+          <div class="social-stat-label">Vidéos</div>
+        </div>
+      </div>
+      <div class="social-desc">Tutoriels complets sur la sécurité informatique et les astuces numériques.</div>
+      <span class="social-btn yt">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        S'abonner
+      </span>
+    </a>
+
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/InformaTech188" target="_blank" rel="noopener" class="social-card fb">
+      <div class="social-header">
+        <div class="social-icon fb">
+          <svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"/></svg>
+        </div>
+        <div>
+          <div class="social-name">Facebook</div>
+          <div class="social-handle">InformaTech188</div>
+        </div>
+      </div>
+      <div class="social-stats">
+        <div>
+          <div class="social-stat-num">18K</div>
+          <div class="social-stat-label">J'aime</div>
+        </div>
+        <div>
+          <div class="social-stat-num">18K</div>
+          <div class="social-stat-label">Followers</div>
+        </div>
+      </div>
+      <div class="social-desc">Notre plus grande communauté. Science et technologie pour tous.</div>
+      <span class="social-btn fb">Aimer la page</span>
+    </a>
+
+    <!-- TikTok -->
+    <a href="https://www.tiktok.com/@informa_tech188" target="_blank" rel="noopener" class="social-card tt">
+      <div class="social-header">
+        <div class="social-icon tt">
+          <svg viewBox="0 0 2859 3333" fill="white" width="22" height="22"><path d="M2081 0c55 473 319 755 778 785v532c-266 26-499-61-770-225v995c0 1264-1378 1659-1933 753-356-583-138-1606 1004-1647v561c-87 14-180 36-265 65-254 86-398 247-358 531 77 544 1075 705 992-358V1h552z"/></svg>
+        </div>
+        <div>
+          <div class="social-name">TikTok</div>
+          <div class="social-handle">@informa_tech188</div>
+        </div>
+      </div>
+      <div class="social-stats">
+        <div>
+          <div class="social-stat-num">13.5K</div>
+          <div class="social-stat-label">Followers</div>
+        </div>
+        <div>
+          <div class="social-stat-num">12.9K</div>
+          <div class="social-stat-label">J'aime</div>
+        </div>
+      </div>
+      <div class="social-desc">Des astuces de sécurité informatique en format court et percutant.</div>
+      <span class="social-btn tt">Suivre</span>
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/informa_technique_r/" target="_blank" rel="noopener" class="social-card ig">
+      <div class="social-header">
+        <div class="social-icon ig">
+          <svg viewBox="0 0 24 24" fill="white" width="22" height="22"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.062 1.366-.334 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.265.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-1.366-.062-2.633-.334-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.584 2.163 15.205 2.163 12c0-3.204.012-3.584.07-4.849.062-1.366.334-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zM12 0C8.741 0 8.332.014 7.052.072 5.197.157 3.355.673 2.014 2.014.673 3.355.157 5.197.072 7.052.014 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.085 1.855.601 3.697 1.942 5.038 1.341 1.341 3.183 1.857 5.038 1.942C8.332 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 1.855-.085 3.697-.601 5.038-1.942 1.341-1.341 1.857-3.183 1.942-5.038C23.986 15.668 24 15.259 24 12c0-3.259-.014-3.668-.072-4.948-.085-1.855-.601-3.697-1.942-5.038C20.645.673 18.803.157 16.948.072 15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </div>
+        <div>
+          <div class="social-name">Instagram</div>
+          <div class="social-handle">@informa_technique_r</div>
+        </div>
+      </div>
+      <div class="social-stats">
+        <div>
+          <div class="social-stat-num">239</div>
+          <div class="social-stat-label">Followers</div>
+        </div>
+        <div>
+          <div class="social-stat-num">14</div>
+          <div class="social-stat-label">Publications</div>
+        </div>
+      </div>
+      <div class="social-desc">Photos, visuels et aperçus de nos tutoriels en format image.</div>
+      <span class="social-btn ig">Suivre</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     À PROPOS
+══════════════════════════════════════════ -->
+<section id="apropos">
+  <div class="about-grid">
+    <div class="about-visual fade-up">
+      <div class="about-img-frame">
+        <div class="about-img-inner">
+          <img src="assets/images/profile.jpg" alt="Informa-Technique R" class="about-profile-photo"
+               onerror="this.style.display='none';document.getElementById('aboutAvatarFallback').style.display='flex'">
+          <div class="about-avatar" id="aboutAvatarFallback" style="display:none">IR</div>
+          <div class="about-name">Informa-Technique R</div>
+          <div class="about-role">Créateur de contenu numérique</div>
+          <div class="about-skills">
+            <span class="skill-tag">🔒 Sécurité mobile</span>
+            <span class="skill-tag">💻 Informatique</span>
+            <span class="skill-tag">💰 Crypto</span>
+            <span class="skill-tag">📱 Android</span>
+            <span class="skill-tag">🌐 Web</span>
+            <span class="skill-tag">📋 Démarches</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about-content fade-up">
+      <div class="section-tag">À propos</div>
+      <h2 class="about-title">Votre guide dans l'univers <span>numérique</span></h2>
+      <p class="about-text">
+        Bienvenue sur Informa-Technique R ! Je crée des tutoriels pratiques sur la sécurité informatique et les astuces numériques pour aider tout le monde à mieux maîtriser ses appareils et à se protéger en ligne.
+      </p>
+      <ul class="about-points">
+        <li>Tutoriels de sécurité mobile et informatique accessibles à tous</li>
+        <li>Guides sur les démarches en ligne (CAF, administrations, etc.)</li>
+        <li>Astuces sur les navigateurs et paramètres de sécurité</li>
+        <li>Tutoriels crypto et finance numérique (Binance et autres)</li>
+        <li>Contenu publié sur YouTube, Facebook, TikTok et Instagram</li>
+      </ul>
+      <a href="#contact" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Me contacter
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CONTACT
+══════════════════════════════════════════ -->
+<section id="contact">
+  <div class="section-header fade-up">
+    <div class="section-tag">Contact</div>
+    <h2 class="section-title">Vous avez une <span>question ?</span></h2>
+    <p class="section-desc">Suggérez un tutoriel, posez une question ou collaborez avec nous</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3 class="contact-info-title">On vous répond !</h3>
+      <p class="contact-info-desc">Vous pouvez nous suggérer des idées de tutoriels, signaler un problème ou simplement dire bonjour. Toutes les questions sur la sécurité numérique sont les bienvenues.</p>
+      <div class="contact-item">
+        <div class="contact-item-icon ci-yt">
+          <svg viewBox="0 0 90 63" fill="white" width="20" height="14"><path d="M88.1 9.8C87 5.8 84 2.7 80.1 1.6 73.1 0 45 0 45 0S16.9 0 9.9 1.6C6 2.7 3 5.8 1.9 9.8 0 17 0 31.5 0 31.5s0 14.5 1.9 21.7C3 57.2 6 60.3 9.9 61.4 16.9 63 45 63 45 63s28.1 0 35.1-1.6c3.9-1.1 6.9-4.2 8-8.2C90 46 90 31.5 90 31.5S90 17 88.1 9.8zM36 45V18l23.4 13.5L36 45z"/></svg>
+        </div>
+        <div>
+          <div class="contact-item-label">YouTube</div>
+          <div class="contact-item-value">@Informa-Tech188</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon ci-fb">
+          <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"/></svg>
+        </div>
+        <div>
+          <div class="contact-item-label">Facebook</div>
+          <div class="contact-item-value">InformaTech188</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon ci-tt">
+          <svg viewBox="0 0 2859 3333" fill="white" width="16" height="16"><path d="M2081 0c55 473 319 755 778 785v532c-266 26-499-61-770-225v995c0 1264-1378 1659-1933 753-356-583-138-1606 1004-1647v561c-87 14-180 36-265 65-254 86-398 247-358 531 77 544 1075 705 992-358V1h552z"/></svg>
+        </div>
+        <div>
+          <div class="contact-item-label">TikTok</div>
+          <div class="contact-item-value">@informa_tech188</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon ci-ig">
+          <svg viewBox="0 0 24 24" fill="white" width="17" height="17"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.062 1.366-.334 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.265.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-1.366-.062-2.633-.334-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.584 2.163 15.205 2.163 12c0-3.204.012-3.584.07-4.849.062-1.366.334-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zM12 0C8.741 0 8.332.014 7.052.072 5.197.157 3.355.673 2.014 2.014.673 3.355.157 5.197.072 7.052.014 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.085 1.855.601 3.697 1.942 5.038 1.341 1.341 3.183 1.857 5.038 1.942C8.332 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 1.855-.085 3.697-.601 5.038-1.942 1.341-1.341 1.857-3.183 1.942-5.038C23.986 15.668 24 15.259 24 12c0-3.259-.014-3.668-.072-4.948-.085-1.855-.601-3.697-1.942-5.038C20.645.673 18.803.157 16.948.072 15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </div>
+        <div>
+          <div class="contact-item-label">Instagram</div>
+          <div class="contact-item-value">@informa_technique_r</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulaire — soumis via AJAX vers php/contact.php -->
+    <form class="contact-form" id="contactForm" onsubmit="submitForm(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Prénom <span class="required">*</span></label>
+          <input class="form-input" type="text" id="fname" name="fname" placeholder="Jean" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Nom</label>
+          <input class="form-input" type="text" id="lname" name="lname" placeholder="Dupont">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email <span class="required">*</span></label>
+        <input class="form-input" type="email" id="email" name="email" placeholder="jean@exemple.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Sujet</label>
+        <select class="form-select" id="subject" name="subject">
+          <option value="">Choisir un sujet...</option>
+          <option value="suggestion">💡 Suggestion de tutoriel</option>
+          <option value="question">❓ Question technique</option>
+          <option value="collab">🤝 Collaboration / Partenariat</option>
+          <option value="autre">✉️ Autre</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Message <span class="required">*</span></label>
+        <textarea class="form-textarea" id="message" name="message" placeholder="Écrivez votre message ici..." required></textarea>
+      </div>
+      <button class="form-submit" type="submit" id="submitBtn">Envoyer le message ✉️</button>
+      <div class="form-success" id="formSuccess"></div>
+      <div class="form-error" id="formError"></div>
+    </form>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SERVICES — ASSISTANCE ADMINISTRATIVE
+══════════════════════════════════════════ -->
+<section id="services">
+  <div class="section-header fade-up">
+    <div class="section-tag">Services</div>
+    <h2 class="section-title">Assistance <span>Administrative</span></h2>
+    <p class="section-desc">Démarches administratives simplifiées — Suivi personnalisé · Réponse rapide · Service de confiance</p>
+  </div>
+
+  <!-- Bloc principal : 2 services côte à côte -->
+  <div class="srv-grid fade-up">
+
+    <!-- TITRE DE SÉJOUR -->
+    <div class="srv-card srv-ts">
+      <div class="srv-card-head">
+        <div class="srv-icon">📄</div>
+        <h3>Titre de Séjour</h3>
+      </div>
+      <div class="srv-tags-row">
+        <span class="srv-badge srv-badge-purple">Première demande</span>
+        <span class="srv-badge srv-badge-outline">Renouvellement · 100% en ligne</span>
+      </div>
+      <ul class="srv-list">
+        <li><span class="srv-arrow">›</span> Constitution et dépôt du dossier</li>
+        <li><span class="srv-arrow">›</span> Suivi jusqu'à la décision finale</li>
+        <li><span class="srv-arrow">›</span> Accompagnement complet</li>
+      </ul>
+    </div>
+
+    <!-- CAMPUS FRANCE -->
+    <div class="srv-card srv-cf">
+      <div class="srv-card-head">
+        <div class="srv-icon">🎓</div>
+        <h3>Campus France</h3>
+      </div>
+      <div class="srv-tags-row">
+        <span class="srv-badge srv-badge-teal">Étudiants étrangers — Études en France</span>
+      </div>
+      <ul class="srv-list">
+        <li><span class="srv-arrow">›</span> Inscription et création du dossier</li>
+        <li><span class="srv-arrow">›</span> Préparation à l'entretien</li>
+        <li><span class="srv-arrow">›</span> Suivi acceptation ou refus définitif</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- TARIFS -->
+  <div class="srv-tarifs fade-up">
+    <div class="srv-tarifs-label">✦ Tarifs ✦</div>
+    <div class="srv-tarifs-row">
+      <div class="srv-tarif-box">
+        <div class="srv-tarif-sub">Prestation complète</div>
+        <div class="srv-tarif-price">200 <span>EUR</span></div>
+      </div>
+      <div class="srv-tarif-op">+</div>
+      <div class="srv-tarif-box">
+        <div class="srv-tarif-sub">Étude de dossier</div>
+        <div class="srv-tarif-price">20 <span>EUR</span></div>
+      </div>
+      <div class="srv-tarif-op">=</div>
+      <div class="srv-tarif-box srv-tarif-total">
+        <div class="srv-tarif-sub">TOTAL</div>
+        <div class="srv-tarif-price">220 <span>EUR</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOYENS DE PAIEMENT -->
+  <div class="srv-payment fade-up">
+    <div class="srv-payment-label">✦ Moyens de paiement ✦</div>
+    <div class="srv-payment-row">
+      <div class="srv-pay-item">
+        <button onclick="openPayModal('paypal')" class="srv-pay-icon pay-paypal">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.59 3.025-2.566 6.243-8.558 6.243H9.828l-1.52 9.635h3.97c.524 0 .968-.382 1.05-.9l.893-5.659h2.19c4.247 0 7.56-1.72 8.533-6.665.404-2.038.05-3.564-1.722-4.367z"/></svg>
+          <span><b>Pay</b>Pal</span>
+        </button>
+      </div>
+      <div class="srv-pay-item">
+        <button onclick="openPayModal('wero')" class="srv-pay-icon pay-wero">
+          <span class="pay-wero-w">W</span><span>ero</span>
+        </button>
+      </div>
+      <div class="srv-pay-item">
+        <button onclick="openPayModal('crypto')" class="srv-pay-icon pay-crypto">
+          <div class="pay-btc-icon">₿</div>
+          <div><div class="pay-name">Crypto</div><div class="pay-sub">BTC / USDT</div></div>
+        </button>
+      </div>
+      <div class="srv-pay-item">
+        <div class="srv-pay-icon pay-card">
+          <div class="pay-card-icon">💳</div>
+          <div><div class="pay-name">Carte</div><div class="pay-sub">bancaire</div></div>
+        </div>
+      </div>
+      <div class="srv-pay-item">
+        <div class="srv-pay-icon pay-cash">
+          <div class="pay-cash-badge">EUR</div>
+          <div><div class="pay-name">Espèces</div><div class="pay-sub">Cash</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT SERVICE -->
+  <div class="srv-contact fade-up">
+    <a href="https://wa.me/33748477259?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20votre%20service%20d%27assistance%20administrative." class="srv-contact-item srv-whatsapp" target="_blank" rel="noopener">
+      <div class="srv-contact-icon">
+        <svg viewBox="0 0 24 24" fill="white" width="22" height="22"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </div>
+      <div>
+        <div class="srv-contact-label">WHATSAPP</div>
+        <div class="srv-contact-value">07 48 47 72 59</div>
+      </div>
+    </a>
+    <a href="mailto:administrativedemarche@gmail.com" class="srv-contact-item srv-email">
+      <div class="srv-contact-icon">
+        <svg viewBox="0 0 24 24" fill="white" width="20" height="20"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </div>
+      <div>
+        <div class="srv-contact-label">EMAIL</div>
+        <div class="srv-contact-value">administrativedemarche@gmail.com</div>
+      </div>
+    </a>
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">🛡️ Informa-Technique R</div>
+      <p class="footer-desc">Tutoriels de sécurité mobile &amp; informatique. Des astuces numériques pratiques pour tous.</p>
+      <div class="footer-social-row">
+        <a href="https://www.youtube.com/@Informa-Tech188" target="_blank" rel="noopener" class="footer-social-btn footer-yt" title="YouTube">
+          <svg viewBox="0 0 90 63" fill="currentColor" width="20" height="14"><path d="M88.1 9.8C87 5.8 84 2.7 80.1 1.6 73.1 0 45 0 45 0S16.9 0 9.9 1.6C6 2.7 3 5.8 1.9 9.8 0 17 0 31.5 0 31.5s0 14.5 1.9 21.7C3 57.2 6 60.3 9.9 61.4 16.9 63 45 63 45 63s28.1 0 35.1-1.6c3.9-1.1 6.9-4.2 8-8.2C90 46 90 31.5 90 31.5S90 17 88.1 9.8zM36 45V18l23.4 13.5L36 45z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/InformaTech188" target="_blank" rel="noopener" class="footer-social-btn footer-fb" title="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@informa_tech188" target="_blank" rel="noopener" class="footer-social-btn footer-tt" title="TikTok">
+          <svg viewBox="0 0 2859 3333" fill="currentColor" width="16" height="16"><path d="M2081 0c55 473 319 755 778 785v532c-266 26-499-61-770-225v995c0 1264-1378 1659-1933 753-356-583-138-1606 1004-1647v561c-87 14-180 36-265 65-254 86-398 247-358 531 77 544 1075 705 992-358V1h552z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/informa_technique_r/" target="_blank" rel="noopener" class="footer-social-btn footer-ig" title="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.062 1.366-.334 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.265.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-1.366-.062-2.633-.334-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.584 2.163 15.205 2.163 12c0-3.204.012-3.584.07-4.849.062-1.366.334-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zM12 0C8.741 0 8.332.014 7.052.072 5.197.157 3.355.673 2.014 2.014.673 3.355.157 5.197.072 7.052.014 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.085 1.855.601 3.697 1.942 5.038 1.341 1.341 3.183 1.857 5.038 1.942C8.332 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 1.855-.085 3.697-.601 5.038-1.942 1.341-1.341 1.857-3.183 1.942-5.038C23.986 15.668 24 15.259 24 12c0-3.259-.014-3.668-.072-4.948-.085-1.855-.601-3.697-1.942-5.038C20.645.673 18.803.157 16.948.072 15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Catégories</div>
+      <ul class="footer-links">
+        <li><a href="#categories" onclick="filterVideos('securite')">🔒 Sécurité</a></li>
+        <li><a href="#categories" onclick="filterVideos('navigateur')">🌐 Navigateur</a></li>
+        <li><a href="#categories" onclick="filterVideos('crypto')">💰 Crypto</a></li>
+        <li><a href="#categories" onclick="filterVideos('demarches')">📋 Démarches</a></li>
+        <li><a href="#categories" onclick="filterVideos('astuces')">💡 Astuces</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigation</div>
+      <ul class="footer-links">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#videos">Tutoriels</a></li>
+        <li><a href="#reseaux">Réseaux</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Plateformes</div>
+      <ul class="footer-links">
+        <li><a href="https://www.youtube.com/@Informa-Tech188" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://www.facebook.com/InformaTech188" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.tiktok.com/@informa_tech188" target="_blank" rel="noopener">TikTok</a></li>
+        <li><a href="https://www.instagram.com/informa_technique_r/" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Informa-Technique R - Tous droits réservés</span>
+    <span>Fait avec ❤️ pour la communauté numérique</span>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════
+     MODAL VIDÉO
+══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-title" id="modalTitle"></div>
+      <button class="modal-close" onclick="closeModalDirect()" aria-label="Fermer">✕</button>
+    </div>
+    <div class="modal-body">
+      <!-- Lecteur vidéo intégré -->
+      <div class="modal-player-wrap" id="modalPlayer"></div>
+      <!-- Liens vers les plateformes (secondaires) -->
+      <div class="modal-platforms-label" id="modalPlatformsLabel"></div>
+      <div class="modal-platforms" id="modalPlatforms"></div>
+      <!-- Description et tags -->
+      <div class="modal-desc" id="modalDesc"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast notification -->
+<div class="toast" id="toast"></div>
+
+<!-- Retour en haut -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Retour en haut">↑</button>
+
+<!-- ══════════════════════════════════════════
+     MODAL PAIEMENT
+══════════════════════════════════════════ -->
+<div class="pay-modal-overlay" id="payModalOverlay" onclick="closePayModal(event)">
+  <div class="pay-modal-box" id="payModalBox">
+    <button class="pay-modal-close" onclick="closePayModalDirect()">✕</button>
+    <div id="payModalContent"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SCRIPTS (séparés en fichiers dédiés)
+══════════════════════════════════════════ -->
+<!-- QR Code generator -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="js/videos.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
+        
