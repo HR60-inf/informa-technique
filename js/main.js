@@ -23,7 +23,6 @@ let activeCategory = 'all';
 let activePlatform = 'all';
 let searchQuery    = '';
 let visibleCount   = 6;
-let videosData     = []; // Chargé depuis data/videos.json
 
 /* ══════════════════════════════════════════
    NAVIGATION
@@ -485,9 +484,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   } catch {
     // Fallback sur videos.js si disponible
-    if (typeof videosDataStatic !== 'undefined') {
-      videosData = videosDataStatic;
-    }
+    // videosData reste tel que défini dans videos.js (fallback)
+    console.warn('Impossible de charger data/videos.json, utilisation du fallback videos.js');
   }
 
   // Rendu initial des vidéos
