@@ -1,25 +1,19 @@
 [
   {
     "id": 1,
-    "title": "Comment éviter les trop-perçus de la CAF ?",
-    "category": "autres",
+    "title": "D\u00e9sactiver l'autorisation des paiements dans les param\u00e8tres Google Chrome",
+    "category": "navigateur",
     "platform": "youtube",
     "thumbnail": "",
-    "emoji": "👨‍",
-    "views": "96700",
-    "date": "2025-11-30",
-    "desc": "Tu veux éviter les trop-perçus de la CAF ?\nOu vérifier si tu n’en as pas un caché dans ton dossier ? 👀\nBeaucoup se font surprendre… alors j’ai fait ce tuto pour t’aider à vérifier tout ça en 2 minutes.\nSi ça t’a aidé, dis-moi en commentaire si tu veux celui pour réclamer un trop-perçu injuste",
-    "tags": [
-      "#Caf",
-      "#troppercu",
-      "#astucescaf",
-      "#tutoriel",
-      "#pourtoi"
-    ],
+    "emoji": "\ud83c\udf10",
+    "views": "273",
+    "date": "il y a 2 ans",
+    "desc": "Comment d\u00e9sactiver et activer les options de paiement dans les param\u00e8tres de Google Chrome pour s\u00e9curiser vos transactions en ligne.",
+    "tags": ["Chrome", "Paiements", "S\u00e9curit\u00e9", "Navigateur"],
     "links": {
       "youtube": "https://youtube.com/@Informa-Tech188",
-      "facebook": "https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.tiktok.com%2F%40informa_tech188%2Fvideo%2F7578409891501509910%3F_r%3D1%26_t%3DZN-91yGN0W5xu2&h=AT6B34KblhFUrmaN1VYVjRjbwfWsEF07zboqQrFN3dKuEvF5LFkeMeFVyDa_1EfA9XSW-jRDBuy0qIJeCJHd63idzoCdZO5UzDPZfupPx4GpuSZI3kh6EHs39f-v-S1o2JdwP80Q0J3nBvb3&s=1",
-      "tiktok": "https://www.tiktok.com/@informa_tech188/video/7578409891501509910"
+      "facebook": "",
+      "tiktok": ""
     }
   },
   {
@@ -28,17 +22,11 @@
     "category": "crypto",
     "platform": "youtube",
     "thumbnail": "",
-    "emoji": "💰",
+    "emoji": "\ud83d\udcb0",
     "views": "1.2K",
     "date": "il y a 1 an",
     "desc": "Guide complet pour convertir vos cryptomonnaies (Bitcoin, USDT, etc.) en euros directement sur la plateforme Binance.",
-    "tags": [
-      "Binance",
-      "Bitcoin",
-      "Euro",
-      "Crypto",
-      "Conversion"
-    ],
+    "tags": ["Binance", "Bitcoin", "Euro", "Crypto", "Conversion"],
     "links": {
       "youtube": "https://youtube.com/@Informa-Tech188",
       "facebook": "https://facebook.com/InformaTech188",
@@ -47,20 +35,15 @@
   },
   {
     "id": 3,
-    "title": "Comment faire une réclamation CAF en ligne",
+    "title": "Comment faire une r\u00e9clamation CAF en ligne",
     "category": "demarches",
     "platform": "facebook",
     "thumbnail": "",
-    "emoji": "📋",
+    "emoji": "\ud83d\udccb",
     "views": "856",
     "date": "il y a 8 mois",
-    "desc": "Tutoriel pas-à-pas pour effectuer une réclamation auprès de la CAF directement depuis votre espace personnel en ligne.",
-    "tags": [
-      "CAF",
-      "Réclamation",
-      "Démarches",
-      "Allocations"
-    ],
+    "desc": "Tutoriel pas-\u00e0-pas pour effectuer une r\u00e9clamation aupr\u00e8s de la CAF directement depuis votre espace personnel en ligne.",
+    "tags": ["CAF", "R\u00e9clamation", "D\u00e9marches", "Allocations"],
     "links": {
       "youtube": "",
       "facebook": "https://facebook.com/InformaTech188",
@@ -69,21 +52,15 @@
   },
   {
     "id": 4,
-    "title": "Sécuriser votre smartphone Android contre les hackers",
+    "title": "S\u00e9curiser votre smartphone Android contre les hackers",
     "category": "securite",
     "platform": "tiktok",
     "thumbnail": "",
-    "emoji": "🔒",
+    "emoji": "\ud83d\udd12",
     "views": "5.4K",
     "date": "il y a 3 mois",
-    "desc": "Les paramètres essentiels à activer sur Android pour protéger votre téléphone contre les attaques et les logiciels malveillants.",
-    "tags": [
-      "Android",
-      "Sécurité",
-      "Hacker",
-      "Protection",
-      "Mobile"
-    ],
+    "desc": "Les param\u00e8tres essentiels \u00e0 activer sur Android pour prot\u00e9ger votre t\u00e9l\u00e9phone contre les attaques et les logiciels malveillants.",
+    "tags": ["Android", "S\u00e9curit\u00e9", "Hacker", "Protection", "Mobile"],
     "links": {
       "youtube": "https://youtube.com/@Informa-Tech188",
       "facebook": "https://facebook.com/InformaTech188",
@@ -96,16 +73,11 @@
     "category": "securite",
     "platform": "youtube",
     "thumbnail": "",
-    "emoji": "🛡️",
+    "emoji": "\ud83d\udee1\ufe0f",
     "views": "2.1K",
     "date": "il y a 6 mois",
-    "desc": "Comment activer la 2FA (double authentification) sur Google, Facebook, Instagram et autres services pour protéger vos comptes.",
-    "tags": [
-      "2FA",
-      "Double authentification",
-      "Google",
-      "Sécurité"
-    ],
+    "desc": "Comment activer la 2FA (double authentification) sur Google, Facebook, Instagram et autres services pour prot\u00e9ger vos comptes.",
+    "tags": ["2FA", "Double authentification", "Google", "S\u00e9curit\u00e9"],
     "links": {
       "youtube": "https://youtube.com/@Informa-Tech188",
       "facebook": "https://facebook.com/InformaTech188",
@@ -114,21 +86,15 @@
   },
   {
     "id": 6,
-    "title": "Détecter et supprimer un virus sur votre téléphone",
+    "title": "D\u00e9tecter et supprimer un virus sur votre t\u00e9l\u00e9phone",
     "category": "securite",
     "platform": "tiktok",
     "thumbnail": "",
-    "emoji": "🧫",
+    "emoji": "\ud83e\uddeb",
     "views": "8.7K",
     "date": "il y a 2 mois",
-    "desc": "Comment détecter si votre téléphone est infecté par un virus et comment le supprimer efficacement sans perdre vos données.",
-    "tags": [
-      "Virus",
-      "Malware",
-      "Android",
-      "Nettoyage",
-      "Mobile"
-    ],
+    "desc": "Comment d\u00e9tecter si votre t\u00e9l\u00e9phone est infect\u00e9 par un virus et comment le supprimer efficacement sans perdre vos donn\u00e9es.",
+    "tags": ["Virus", "Malware", "Android", "Nettoyage", "Mobile"],
     "links": {
       "youtube": "https://youtube.com/@Informa-Tech188",
       "facebook": "https://facebook.com/InformaTech188",
@@ -137,21 +103,15 @@
   },
   {
     "id": 7,
-    "title": "Vérifier si votre email a été piraté (Have I Been Pwned)",
+    "title": "V\u00e9rifier si votre email a \u00e9t\u00e9 pirat\u00e9 (Have I Been Pwned)",
     "category": "securite",
     "platform": "facebook",
     "thumbnail": "",
-    "emoji": "🔍",
+    "emoji": "\ud83d\udd0d",
     "views": "3.3K",
     "date": "il y a 4 mois",
-    "desc": "Utilisez Have I Been Pwned pour vérifier si votre adresse email figure dans une fuite de données et comment réagir.",
-    "tags": [
-      "Email",
-      "Piratage",
-      "HaveIBeenPwned",
-      "Fuite",
-      "Données"
-    ],
+    "desc": "Utilisez Have I Been Pwned pour v\u00e9rifier si votre adresse email figure dans une fuite de donn\u00e9es et comment r\u00e9agir.",
+    "tags": ["Email", "Piratage", "HaveIBeenPwned", "Fuite", "Donn\u00e9es"],
     "links": {
       "youtube": "",
       "facebook": "https://facebook.com/InformaTech188",
@@ -160,20 +120,15 @@
   },
   {
     "id": 8,
-    "title": "Créer un mot de passe ultra sécurisé — méthode complète",
+    "title": "Cr\u00e9er un mot de passe ultra s\u00e9curis\u00e9 \u2014 m\u00e9thode compl\u00e8te",
     "category": "astuces",
     "platform": "youtube",
     "thumbnail": "",
-    "emoji": "🔑",
+    "emoji": "\ud83d\udd11",
     "views": "1.9K",
     "date": "il y a 5 mois",
-    "desc": "Toutes les règles pour créer et gérer des mots de passe robustes. Présentation des gestionnaires de mots de passe recommandés.",
-    "tags": [
-      "Mot de passe",
-      "Sécurité",
-      "Bitwarden",
-      "LastPass"
-    ],
+    "desc": "Toutes les r\u00e8gles pour cr\u00e9er et g\u00e9rer des mots de passe robustes. Pr\u00e9sentation des gestionnaires de mots de passe recommand\u00e9s.",
+    "tags": ["Mot de passe", "S\u00e9curit\u00e9", "Bitwarden", "LastPass"],
     "links": {
       "youtube": "https://youtube.com/@Informa-Tech188",
       "facebook": "https://facebook.com/InformaTech188",
@@ -182,21 +137,15 @@
   },
   {
     "id": 9,
-    "title": "Bloquer les publicités et trackers sur mobile",
+    "title": "Bloquer les publicit\u00e9s et trackers sur mobile",
     "category": "navigateur",
     "platform": "tiktok",
     "thumbnail": "",
-    "emoji": "🚫",
+    "emoji": "\ud83d\udeab",
     "views": "4.6K",
     "date": "il y a 1 mois",
-    "desc": "Comment bloquer toutes les publicités intrusives et les trackers sur votre téléphone Android ou iPhone — applications et réglages.",
-    "tags": [
-      "AdBlock",
-      "Publicités",
-      "Trackers",
-      "Mobile",
-      "Vie privée"
-    ],
+    "desc": "Comment bloquer toutes les publicit\u00e9s intrusives et les trackers sur votre t\u00e9l\u00e9phone Android ou iPhone \u2014 applications et r\u00e9glages.",
+    "tags": ["AdBlock", "Publicit\u00e9s", "Trackers", "Mobile", "Vie priv\u00e9e"],
     "links": {
       "youtube": "https://youtube.com/@Informa-Tech188",
       "facebook": "https://facebook.com/InformaTech188",
@@ -205,21 +154,15 @@
   },
   {
     "id": 10,
-    "title": "Comment créer un compte Binance et acheter des cryptos",
+    "title": "Comment cr\u00e9er un compte Binance et acheter des cryptos",
     "category": "crypto",
     "platform": "youtube",
     "thumbnail": "",
-    "emoji": "₿",
+    "emoji": "\u20bf",
     "views": "2.8K",
     "date": "il y a 10 mois",
-    "desc": "Guide de démarrage pour créer votre compte Binance, vérifier votre identité (KYC) et réaliser votre premier achat de cryptomonnaies.",
-    "tags": [
-      "Binance",
-      "Bitcoin",
-      "Débutant",
-      "KYC",
-      "Crypto"
-    ],
+    "desc": "Guide de d\u00e9marrage pour cr\u00e9er votre compte Binance, v\u00e9rifier votre identit\u00e9 (KYC) et r\u00e9aliser votre premier achat de cryptomonnaies.",
+    "tags": ["Binance", "Bitcoin", "D\u00e9butant", "KYC", "Crypto"],
     "links": {
       "youtube": "https://youtube.com/@Informa-Tech188",
       "facebook": "https://facebook.com/InformaTech188",
@@ -228,21 +171,15 @@
   },
   {
     "id": 11,
-    "title": "Récupérer un compte Facebook ou Instagram piraté",
+    "title": "R\u00e9cup\u00e9rer un compte Facebook ou Instagram pirat\u00e9",
     "category": "securite",
     "platform": "facebook",
     "thumbnail": "",
-    "emoji": "🆘",
+    "emoji": "\ud83c\udd98",
     "views": "12.4K",
     "date": "il y a 7 mois",
-    "desc": "Procédure complète pour récupérer l'accès à votre compte Facebook ou Instagram après un piratage, étape par étape.",
-    "tags": [
-      "Facebook",
-      "Instagram",
-      "Piratage",
-      "Récupération",
-      "Compte"
-    ],
+    "desc": "Proc\u00e9dure compl\u00e8te pour r\u00e9cup\u00e9rer l'acc\u00e8s \u00e0 votre compte Facebook ou Instagram apr\u00e8s un piratage, \u00e9tape par \u00e9tape.",
+    "tags": ["Facebook", "Instagram", "Piratage", "R\u00e9cup\u00e9ration", "Compte"],
     "links": {
       "youtube": "https://youtube.com/@Informa-Tech188",
       "facebook": "https://facebook.com/InformaTech188",
@@ -255,17 +192,11 @@
     "category": "astuces",
     "platform": "tiktok",
     "thumbnail": "",
-    "emoji": "📁",
+    "emoji": "\ud83d\udcc1",
     "views": "7.2K",
     "date": "il y a 3 semaines",
-    "desc": "Les meilleures solutions gratuites pour envoyer des fichiers volumineux sans passer par une messagerie email limitée.",
-    "tags": [
-      "WeTransfer",
-      "Google Drive",
-      "Fichiers",
-      "Gratuit",
-      "Partage"
-    ],
+    "desc": "Les meilleures solutions gratuites pour envoyer des fichiers volumineux sans passer par une messagerie email limit\u00e9e.",
+    "tags": ["WeTransfer", "Google Drive", "Fichiers", "Gratuit", "Partage"],
     "links": {
       "youtube": "",
       "facebook": "https://facebook.com/InformaTech188",
