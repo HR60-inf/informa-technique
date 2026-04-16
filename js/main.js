@@ -280,38 +280,55 @@ function openModal(id) {
   const playerEl = document.getElementById('modalPlayer');
   const labelEl  = document.getElementById('modalPlatformsLabel');
 
-  if (v.embedUrl) {
-    // Convertir lien YouTube standard → URL d'intégration
-    let src = v.embedUrl;
-    const ytMatch = v.embedUrl.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s?]+)/);
-    if (ytMatch) {
-      src = `https://www.youtube.com/embed/${ytMatch[1]}?rel=0&modestbranding=1`;
+  /* ── Auto-embed depuis les liens disponibles ── */
+  let embedSrc = null;
+
+  // 1. Priorité YouTube
+  const ytUrl = (v.links && v.links.youtube) ? v.links.youtube : (v.embedUrl || '');
+  const ytMatch = ytUrl.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s?]+)/);
+  if (ytMatch) {
+    embedSrc = `https://www.youtube.com/embed/${ytMatch[1]}?rel=0&modestbranding=1`;
+  }
+
+  // 2. Sinon TikTok
+  if (!embedSrc && v.links && v.links.tiktok) {
+    const ttMatch = v.links.tiktok.match(/video\/(\d+)/);
+    if (ttMatch) {
+      embedSrc = `https://www.tiktok.com/embed/v2/${ttMatch[1]}`;
     }
+  }
+
+  // 3. Sinon Facebook video
+  if (!embedSrc && v.links && v.links.facebook && v.links.facebook.includes('video')) {
+    embedSrc = `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(v.links.facebook)}&width=500&show_text=false`;
+  }
+
+  if (embedSrc) {
     playerEl.innerHTML = `<iframe
-      src="${src}"
+      src="${embedSrc}"
       frameborder="0"
       allowfullscreen
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       title="${escapeHTML(v.title)}"
+      style="width:100%;height:100%;min-height:280px;border-radius:12px"
     ></iframe>`;
     playerEl.style.display = 'block';
     labelEl.innerHTML = `<p class="modal-platforms-title">Regarder aussi sur :</p>`;
   } else {
-    // Pas encore de vidéo intégrée → placeholder
     playerEl.innerHTML = `
       <div class="modal-no-embed">
-        <div class="modal-no-embed-icon">${v.emoji}</div>
-        <p>Regarder ce tutoriel sur :</p>
+        <div class="modal-no-embed-icon">${v.emoji || '🎬'}</div>
+        <p>Choisissez une plateforme pour regarder :</p>
       </div>`;
     playerEl.style.display = 'block';
     labelEl.innerHTML = '';
   }
 
   /* ── Boutons plateformes ── */
-  const links = Object.entries(v.links).filter(([, url]) => url);
+  const links = Object.entries(v.links || {}).filter(([, url]) => url);
   document.getElementById('modalPlatforms').innerHTML = links.length
     ? links.map(([k, url]) => `
-        <a href="${url}" target="_blank" rel="noopener" class="modal-platform-btn ${platClass[k]} ${v.embedUrl ? 'small' : ''}">
+        <a href="${url}" target="_blank" rel="noopener" class="modal-platform-btn ${platClass[k]}">
           ${platIcons[k]} ${platNames[k]}
         </a>
       `).join('')
