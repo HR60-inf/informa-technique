@@ -23,6 +23,7 @@ let activeCategory = 'all';
 let activePlatform = 'all';
 let searchQuery    = '';
 let visibleCount   = 6;
+let videosData     = []; // Chargé depuis data/videos.json
 
 /* ══════════════════════════════════════════
    NAVIGATION
@@ -473,7 +474,22 @@ function isValidEmail(email) {
 /* ══════════════════════════════════════════
    INITIALISATION
 ══════════════════════════════════════════ */
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  // Charger les vidéos depuis data/videos.json
+  try {
+    const res = await fetch('data/videos.json?t=' + Date.now());
+    if (res.ok) {
+      videosData = await res.json();
+    } else {
+      throw new Error('Fichier non trouvé');
+    }
+  } catch {
+    // Fallback sur videos.js si disponible
+    if (typeof videosDataStatic !== 'undefined') {
+      videosData = videosDataStatic;
+    }
+  }
+
   // Rendu initial des vidéos
   renderVideos();
 
