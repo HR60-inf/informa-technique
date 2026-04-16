@@ -26,7 +26,7 @@
  * ─────────────────────────────────────────────────────────
  */
 
-const videosData = [
+var videosData = [
   {
     id: 1,
     title: "Désactiver l'autorisation des paiements dans les paramètres Google Chrome",
