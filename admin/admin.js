@@ -20,7 +20,7 @@
 'use strict';
 
 // ── CONFIGURATION ──────────────────────────────────────
-const ADMIN_PASSWORD = 'Chouani2018@!'; // ← Changez ce mot de passe !
+const ADMIN_PASSWORD = 'admin2025'; // ← Changez ce mot de passe !
 const API_BASE       = '../php/videos.php';
 const ADMIN_TOKEN    = 'informa2025secret'; // Doit correspondre à php/videos.php
 const SESSION_KEY    = 'itr_admin_logged';
@@ -88,27 +88,14 @@ function initAdmin() {
 ══════════════════════════════════════════ */
 async function loadVideos() {
   try {
-    const response = await fetch(API_BASE + '?t=' + Date.now(), {
-      headers: { 'X-Admin-Token': ADMIN_TOKEN }
-    });
-
-    if (!response.ok) throw new Error('API non disponible');
-
-    const data = await response.json();
-    if (data.success) {
-      localVideos = data.videos;
-    } else {
-      throw new Error(data.message);
-    }
+    const response = await fetch('../data/videos.json?t=' + Date.now());
+    if (!response.ok) throw new Error('Fichier introuvable');
+    localVideos = await response.json();
+    showToast('✅ ' + localVideos.length + ' vidéos chargées', 'success');
   } catch {
-    // Fallback : charger depuis js/videos.js (déjà chargé dans la page parent)
-    // En mode admin standalone, on utilise un tableau vide
-    if (typeof videosData !== 'undefined') {
-      localVideos = JSON.parse(JSON.stringify(videosData));
-    }
-    showToast('⚠️ Mode hors ligne — API PHP non disponible', 'error');
+    localVideos = [];
+    showToast('⚠️ Aucune vidéo trouvée dans data/videos.json', 'error');
   }
-
   renderAdminVideos();
   renderStats();
 }
@@ -224,80 +211,90 @@ async function saveVideo(e) {
   };
 
   try {
-    let response, data;
-
     if (editingId) {
-      // Modification (PUT)
-      response = await fetch(`${API_BASE}?id=${editingId}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Admin-Token': ADMIN_TOKEN
-        },
-        body: JSON.stringify(videoData)
-      });
+      const idx = localVideos.findIndex(v => v.id === editingId);
+      if (idx !== -1) localVideos[idx] = { ...localVideos[idx], ...videoData };
     } else {
-      // Ajout (POST)
-      response = await fetch(API_BASE, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Admin-Token': ADMIN_TOKEN
-        },
-        body: JSON.stringify(videoData)
-      });
+      const maxId = localVideos.length > 0 ? Math.max(...localVideos.map(v => v.id)) : 0;
+      localVideos.push({ id: maxId + 1, ...videoData, created_at: new Date().toISOString() });
     }
 
-    data = await response.json();
+    renderAdminVideos();
+    renderStats();
 
-    if (data.success) {
-      feedback.textContent = editingId
-        ? '✅ Vidéo modifiée avec succès !'
-        : '✅ Vidéo ajoutée avec succès ! Rechargez le site pour voir les changements.';
-      feedback.className = 'form-feedback success';
-      showToast(feedback.textContent, 'success');
+    const msg = editingId ? '✅ Vidéo modifiée !' : '✅ Vidéo ajoutée !';
+    feedback.textContent = msg;
+    feedback.className = 'form-feedback success';
+    feedback.style.display = 'block';
+    showToast(msg, 'success');
 
-      await loadVideos();
-      setTimeout(() => {
-        resetForm();
-        showTab('videos', document.querySelector('.sidebar-link[onclick*="videos"]'));
-      }, 2000);
-    } else {
-      throw new Error(data.message || 'Erreur inconnue');
-    }
+    // Générer et télécharger le fichier videos.json mis à jour
+    exportVideosJSON();
+
+    setTimeout(() => {
+      resetForm();
+      showTab('videos', document.querySelector('.sidebar-link[onclick*="videos"]'));
+    }, 2500);
 
   } catch (err) {
-    // Mode hors ligne — modification locale uniquement
-    if (err.message.includes('fetch') || err.message.includes('Failed')) {
-      saveLocally(videoData);
-    } else {
-      feedback.textContent  = '❌ ' + err.message;
-      feedback.className    = 'form-feedback error';
-      showToast('❌ ' + err.message, 'error');
-    }
+    feedback.textContent = '❌ ' + err.message;
+    feedback.className = 'form-feedback error';
+    feedback.style.display = 'block';
+    showToast('❌ ' + err.message, 'error');
   } finally {
     saveBtn.disabled    = false;
     saveBtn.textContent = '💾 Enregistrer';
   }
 }
 
-/** Fallback si PHP non disponible */
-function saveLocally(data) {
-  const feedback = document.getElementById('formFeedback');
+/** Exporter videos.json et afficher instructions GitHub */
+function exportVideosJSON() {
+  const json = JSON.stringify(localVideos, null, 2);
+  const blob = new Blob([json], { type: 'application/json' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href     = url;
+  a.download = 'videos.json';
+  a.click();
+  URL.revokeObjectURL(url);
 
-  if (editingId) {
-    const idx = localVideos.findIndex(v => v.id === editingId);
-    if (idx !== -1) localVideos[idx] = { ...localVideos[idx], ...data };
-  } else {
-    const maxId = localVideos.length > 0 ? Math.max(...localVideos.map(v => v.id)) : 0;
-    localVideos.push({ id: maxId + 1, ...data, created_at: new Date().toISOString() });
+  // Afficher bannière instructions
+  showUploadBanner();
+}
+
+function showUploadBanner() {
+  let banner = document.getElementById('uploadBanner');
+  if (!banner) {
+    banner = document.createElement('div');
+    banner.id = 'uploadBanner';
+    banner.style.cssText = `
+      position:fixed; bottom:20px; left:50%; transform:translateX(-50%);
+      background:#0d1525; border:2px solid #00c8ff; border-radius:16px;
+      padding:20px 28px; max-width:480px; width:90%; z-index:9999;
+      box-shadow:0 8px 32px rgba(0,200,255,0.2); color:#e8f0fe;
+      font-family:'DM Sans',sans-serif; font-size:14px;
+    `;
+    document.body.appendChild(banner);
   }
-
-  feedback.textContent = '⚠️ Sauvegarde locale uniquement (PHP non disponible). Ajoutez manuellement dans js/videos.js.';
-  feedback.className   = 'form-feedback error';
-  showToast('⚠️ Sauvegardé localement seulement', 'error');
-  renderAdminVideos();
-  renderStats();
+  banner.innerHTML = `
+    <div style="font-size:18px;font-weight:700;color:#00c8ff;margin-bottom:10px">
+      📥 Fichier téléchargé : videos.json
+    </div>
+    <div style="color:#8ba3c7;margin-bottom:12px;line-height:1.6">
+      Pour mettre à jour le site en ligne, uploade ce fichier sur GitHub :
+    </div>
+    <ol style="padding-left:18px;line-height:2;color:#e8f0fe">
+      <li>Va sur <strong>github.com</strong> → dépôt <strong>informa-technique</strong></li>
+      <li>Ouvre le dossier <strong>data/</strong></li>
+      <li>Clique <strong>"Add file" → "Upload files"</strong></li>
+      <li>Uploade <strong>videos.json</strong> → Commit</li>
+    </ol>
+    <button onclick="document.getElementById('uploadBanner').remove()"
+      style="margin-top:14px;padding:8px 20px;background:#00c8ff;color:#000;
+      border:none;border-radius:8px;font-weight:700;cursor:pointer;width:100%">
+      ✅ Compris !
+    </button>
+  `;
 }
 
 function resetForm() {
@@ -316,31 +313,11 @@ function resetForm() {
 async function deleteVideo(id, title) {
   if (!confirm(`⚠️ Supprimer cette vidéo ?\n\n"${title}"\n\nCette action est irréversible.`)) return;
 
-  try {
-    const response = await fetch(`${API_BASE}?id=${id}`, {
-      method: 'DELETE',
-      headers: { 'X-Admin-Token': ADMIN_TOKEN }
-    });
-
-    const data = await response.json();
-
-    if (data.success) {
-      showToast('✅ Vidéo supprimée !', 'success');
-      await loadVideos();
-    } else {
-      throw new Error(data.message);
-    }
-  } catch (err) {
-    if (err.message.includes('fetch') || err.message.includes('Failed')) {
-      // Mode local
-      localVideos = localVideos.filter(v => v.id !== id);
-      renderAdminVideos();
-      renderStats();
-      showToast('⚠️ Supprimé localement (PHP non disponible)', 'error');
-    } else {
-      showToast('❌ ' + err.message, 'error');
-    }
-  }
+  localVideos = localVideos.filter(v => v.id !== id);
+  renderAdminVideos();
+  renderStats();
+  showToast('✅ Vidéo supprimée !', 'success');
+  exportVideosJSON();
 }
 
 /* ══════════════════════════════════════════
