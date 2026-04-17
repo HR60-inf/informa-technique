@@ -361,7 +361,8 @@ nav.scrolled {
 /* ── Colonne texte (gauche) ── */
 .hero-content {
   flex: 1;
-  max-width: 520px;
+  max-width: 600px;
+  min-width: 0;
 }
 
 .hero-badge {
@@ -390,11 +391,12 @@ nav.scrolled {
 
 .hero-title {
   font-family: var(--font-head);
-  font-size: clamp(1.5rem, 2.4vw, 2.1rem);
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.3px;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
   margin-bottom: 16px;
+  white-space: nowrap;
 }
 
 .hero-title span {
@@ -639,7 +641,7 @@ nav.scrolled {
     text-align: center;
     gap: 40px;
   }
-  .hero-content { max-width: 600px; }
+  .hero-content { max-width: 100%; }
   .hero-desc { max-width: 100%; }
   .hero-buttons { justify-content: center; }
   .hero-stats { justify-content: center; }
@@ -2210,6 +2212,11 @@ button.pay-crypto:hover { border-color: #f7931a; }
   .srv-tarifs-row { flex-direction: column; align-items: center; }
   .srv-tarif-op { transform: rotate(90deg); }
   .srv-payment-row { gap: 10px; }
+}
+
+
+@media (max-width: 768px) {
+  .hero-title { white-space: normal; font-size: clamp(1.6rem, 5.5vw, 2.2rem); }
 }
 
 /* ════════════════════════════════════════════
