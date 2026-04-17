@@ -62,6 +62,13 @@ a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 section { position: relative; z-index: 1; }
 
+/* Conteneur interne responsive pour toutes les sections */
+.section-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 /* ── NAVIGATION ── */
 nav {
   position: fixed;
@@ -347,7 +354,7 @@ nav.scrolled {
   justify-content: space-between;
   gap: 60px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -1447,9 +1454,10 @@ footer {
   background: rgba(0, 0, 0, 0.9);
   backdrop-filter: blur(10px);
   z-index: 1000;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 20px;
+  padding: 16px;
+  overflow-y: auto;
 }
 
 .modal-overlay.open { display: flex; }
@@ -1458,44 +1466,54 @@ footer {
   background: var(--bg2);
   border: 1px solid var(--border);
   border-radius: 20px;
-  max-width: 780px;
+  max-width: 860px;
   width: 100%;
-  overflow: hidden;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
   animation: modalIn 0.3s ease;
 }
 
 .modal-header {
-  padding: 20px 24px;
+  padding: 16px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: var(--bg2);
+  border-radius: 20px 20px 0 0;
+  z-index: 10;
+  gap: 12px;
 }
 
 .modal-title {
   font-family: var(--font-head);
   font-weight: 700;
   font-size: 16px;
-  max-width: 80%;
+  flex: 1;
   line-height: 1.3;
 }
 
 .modal-close {
-  width: 32px; height: 32px;
-  border-radius: 8px;
+  width: 40px; height: 40px;
+  border-radius: 10px;
   border: 1px solid var(--border);
-  background: transparent;
-  color: var(--muted);
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
-  transition: border-color var(--transition), color var(--transition);
+  font-size: 18px;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: border-color var(--transition), color var(--transition), background var(--transition);
 }
 
-.modal-close:hover { border-color: var(--accent); color: var(--accent); }
-.modal-body { padding: 24px; }
+.modal-close:hover { border-color: var(--accent); color: var(--accent); background: rgba(0,200,255,0.1); }
+.modal-body { padding: 20px; }
 
 /* ── Lecteur vidéo intégré ── */
 .modal-player-wrap {
@@ -2192,4 +2210,51 @@ button.pay-crypto:hover { border-color: #f7931a; }
   .srv-tarifs-row { flex-direction: column; align-items: center; }
   .srv-tarif-op { transform: rotate(90deg); }
   .srv-payment-row { gap: 10px; }
+}
+
+/* ════════════════════════════════════════════
+   GRANDS ÉCRANS (24"+ / 1600px+)
+════════════════════════════════════════════ */
+@media (min-width: 1600px) {
+  nav { padding: 0 8%; }
+
+  #accueil { padding: 120px 8% 80px; }
+  #categories { padding: 120px 8%; }
+  #videos { padding: 120px 8%; }
+  #reseaux { padding: 120px 8%; }
+  #apropos { padding: 120px 8%; }
+
+  .hero-wrap { max-width: 1600px; gap: 80px; }
+  .hero-title { font-size: clamp(38px, 4vw, 64px); }
+
+  .categories-grid { max-width: 1400px; margin: 0 auto; }
+  .videos-grid { max-width: 1400px; margin: 0 auto; }
+  .socials-grid { max-width: 1400px; margin: 0 auto; }
+
+  .modal-box { max-width: 1000px; }
+}
+
+@media (min-width: 1920px) {
+  #accueil,
+  #categories,
+  #videos,
+  #reseaux,
+  #apropos { padding-left: max(8%, calc(50% - 700px)); padding-right: max(8%, calc(50% - 700px)); }
+
+  .hero-wrap,
+  .categories-grid,
+  .videos-grid,
+  .socials-grid { max-width: 1600px; }
+}
+
+/* ════════════════════════════════════════════
+   TRÈS PETITS ÉCRANS MODAL (mobile)
+════════════════════════════════════════════ */
+@media (max-width: 600px) {
+  .modal-overlay { padding: 0; align-items: flex-start; }
+  .modal-box { border-radius: 0 0 20px 20px; margin: 0; border-top: none; }
+  .modal-header { border-radius: 0; padding: 14px 16px; }
+  .modal-body { padding: 16px; }
+  .modal-player-wrap iframe { min-height: 220px; }
+  .modal-platform-btn { padding: 12px 14px; font-size: 13px; flex: 1; justify-content: center; }
 }
