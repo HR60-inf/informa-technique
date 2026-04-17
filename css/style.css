@@ -2225,8 +2225,6 @@ button.pay-crypto:hover { border-color: #f7931a; }
   #apropos { padding: 120px 8%; }
 
   .hero-wrap { max-width: 1600px; gap: 80px; }
-  .hero-title { font-size: clamp(38px, 4vw, 64px); }
-
   .categories-grid { max-width: 1400px; margin: 0 auto; }
   .videos-grid { max-width: 1400px; margin: 0 auto; }
   .socials-grid { max-width: 1400px; margin: 0 auto; }
